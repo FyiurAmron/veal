@@ -662,7 +662,7 @@ uint32_t bassenhancer_audio_module::process(uint32_t offset, uint32_t numsamples
 /**********************************************************************
  * VINYL by Markus Schmidt
 **********************************************************************/
-
+#ifdef ENABLE_EXPERIMENTAL
 vinyl_audio_module::vinyl_audio_module() {
     active          = false;
     clip_inL        = 0.f;
@@ -884,7 +884,7 @@ bool vinyl_audio_module::get_layers(int index, int generation, unsigned int &lay
         layers |= LG_REALTIME_GRAPH;
     return true;
 }
-
+#endif
 
 /**********************************************************************
  * TAPESIMULATOR by Markus Schmidt
