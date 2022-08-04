@@ -1199,11 +1199,11 @@ uint32_t vocoder_audio_module::process(uint32_t offset, uint32_t numsamples, uin
 #ifdef MAX_2_CHANNELS
     assert(vocoder_metadata::in_count == 2);
     // two pointers each to the same in buffers
-    float *(ins_lmms[4]) = { ins[0], ins[0], ins[1], ins[1] };
+    float *ins_lmms[4] = { ins[0], ins[0], ins[1], ins[1] };
 #else
     assert(vocoder_metadata::in_count == 4);
     // for pointers to each in buffer
-    float *(ins_lmms[4]) = { ins[0], ins[1], ins[2], ins[3] };
+    float *ins_lmms[4] = { ins[0], ins[1], ins[2], ins[3] };
 #endif
 
     if(bypassed) {
